@@ -55,7 +55,6 @@ plt.show()
 
 
 # Gráfico de dispersão - Nota MinMax x N_Avaliações_MinMax
-plt.figure(figsize=(10, 6))
 sns.jointplot(
     x='Nota',
     y='N_Avaliações',
