@@ -68,4 +68,3 @@ def rm_outliers(df):
     ]
 
     return df_rm_outliers
-
