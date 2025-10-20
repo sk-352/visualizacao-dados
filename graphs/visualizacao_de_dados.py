@@ -46,7 +46,7 @@ plt.title("Pizza - Distribuição da Categoria Temporada")
 plt.show()
 
 
-# Gráfico de densidade
+# Gráfico de densidade - Distribuição de Notas
 plt.figure(figsize=(10, 6))
 sns.kdeplot(df["Nota"], fill=True, color="#863e9c")
 plt.title("Densidade - Distribuição de Notas")
