@@ -1,0 +1,10 @@
+Projeto simples para visualização de dados com Dash e Python.
+
+Requerimentos:
+- Dash
+- Pandas
+- Plotly Express
+
+Para executar:
+
+python graphs/visualizacao_de_dados.py

@@ -1,11 +1,9 @@
 import pandas as pd
 from dash import Dash, dcc, html
 import plotly.express as px
-from funcoes import print_infos, renomear, outros, rm_outliers
+from funcoes import renomear, outros, rm_outliers
 
 df = pd.read_csv("ecommerce_estatistica.csv")
-
-print_infos()
 
 
 # Mapa de calor - Correlação entre variáveis
@@ -66,7 +64,7 @@ def plot_density(df):
     )
     fig_density.update_layout(
         xaxis_title="Notas",
-        yaxis_title="Quantidade de Avaliações",
+        yaxis_title="Frequência",
     )
 
     return fig_density
@@ -83,8 +81,8 @@ def plot_histogram(df):
         facet_col_spacing=0.1,
     )
     fig_hist.update_layout(
-        xaxis_title="Preços",
-        yaxis_title="Quantidade de Produtos na Faixa de Preço",
+        xaxis_title="Faixas de Preço",
+        yaxis_title="Quantidade de Produtos",
     )
 
     return fig_hist
