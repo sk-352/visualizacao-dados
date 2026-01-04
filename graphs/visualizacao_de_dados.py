@@ -153,21 +153,51 @@ def cria_app(df):
     fig_bar = plot_bar(dados_genero)
     fig_regression = plot_regression(df_rm_outliers)
 
+    # Aumentando os gráficos
+    fig_heatmap.update_layout(height=550)
+    fig_pizza.update_layout(height=550)
+
     # Layout do app
-    app.layout = html.Div(children=[
-        html.Div(style={'flex': '1'}, children=[
-            dcc.Graph(figure=fig_heatmap),
-            dcc.Graph(figure=fig_pizza),
+    app.layout = html.Div(style={'width': '100%', 'padding': '20px'}, children=[
+        ### Linha 1: heatmap, pizza
+        html.Div(style={
+            'display': 'flex',
+            'flex-direction': 'row',
+            'gap' : '25px',
+            'width': '100%',
+            }, 
+            children=[
+            dcc.Graph(figure=fig_heatmap, style={'flex': '1'}),
+            dcc.Graph(figure=fig_pizza, style={'flex': '1'}),
         ]),
-        html.Div(style={'flex': '1'}, children=[
-            dcc.Graph(figure=fig_density),
-            dcc.Graph(figure=fig_hist),
+        ### Linha 2: densidade, histograma
+        html.Div(style={
+            'display': 'flex',
+            'flex-direction': 'row',
+            'gap' : '25px',
+            'width': '100%',
+            }, 
+            children=[
+            dcc.Graph(figure=fig_density, style={'flex': '1'}),
+            dcc.Graph(figure=fig_hist, style={'flex': '1'}),
         ]),
-        html.Div(style={'flex': '1'}, children=[
-            dcc.Graph(figure=fig_scatter),
-            dcc.Graph(figure=fig_bar),
+        ### Linha 3: dispersão, barra
+        html.Div(style={
+            'display': 'flex',
+            'flex-direction': 'row',
+            'gap' : '25px',
+            'width': '100%',
+            }, 
+            children=[
+            dcc.Graph(figure=fig_scatter, style={'flex': '1'}),
+            dcc.Graph(figure=fig_bar, style={'flex': '1'}),
         ]),
-        dcc.Graph(figure=fig_regression),
+        html.Div(style={
+            'width': '100%',
+        },
+        ### Linha 4: Regressão
+        children=dcc.Graph(figure=fig_regression)
+        )
     ])
 
     return app
