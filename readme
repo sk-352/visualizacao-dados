@@ -1,10 +1,14 @@
-Projeto para visualização de dados com Dash e Plotly Express.
+Dashboard interativo utilizando Dash e Plotly Express, com foco na exploração e visualização de dados de um e-commerce fictício de roupas. Este projeto faz parte do curso profissionalizante Profissão: Analista de Dados – EBAC, e tem como objetivo transformar dados brutos em insights claros e acionáveis.
 
-Requerimentos:
-- Dash
-- Pandas
-- Plotly Express
+A partir de uma base de dados de comentários e avaliações de clientes, o dashboard permite analisar diferentes aspectos do negócio por meio das seguintes visualizações:
 
-Para executar:
+ - Mapa de calor para identificar correlações entre variáveis
+ - Gráfico de pizza para entender a distribuição das categorias de temporada
+ - Gráfico de densidade para analisar a distribuição das notas e o nível de satisfação dos clientes
+ - Histograma para visualizar a distribuição de preços e identificar possíveis outliers
+ - Gráfico de dispersão relacionando notas e número de avaliações
+ - Gráfico de barras para análise da distribuição por gênero
+ - Gráfico de regressão explorando a relação entre número de avaliações e quantidade vendida
 
-python graphs/visualizacao_de_dados.py
+O dashboard pode ser acessado através do link, é recomendada a visualização em um monitor 16:9 (pode levar alguns minutos para iniciar): 
+https://visualizacao-dados-ir80.onrender.com/
