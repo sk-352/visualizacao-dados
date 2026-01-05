@@ -54,7 +54,6 @@ def plot_pizza(maiores):
 
 # Gráfico de densidade - Distribuição de Notas
 def plot_density(df):
-
     fig_density = px.histogram(
         data_frame=df,
         x="Nota",
@@ -158,50 +157,61 @@ def cria_app(df):
     fig_pizza.update_layout(height=550)
 
     # Layout do app
-    app.layout = html.Div(style={'width': '100%', 'padding': '20px'}, children=[
-        ### Linha 1: heatmap, pizza
-        html.Div(style={
-            'display': 'flex',
-            'flex-direction': 'row',
-            'gap' : '25px',
-            'width': '100%',
-            }, 
-            children=[
-            dcc.Graph(figure=fig_heatmap, style={'flex': '1'}),
-            dcc.Graph(figure=fig_pizza, style={'flex': '1'}),
-        ]),
-        ### Linha 2: densidade, histograma
-        html.Div(style={
-            'display': 'flex',
-            'flex-direction': 'row',
-            'gap' : '25px',
-            'width': '100%',
-            }, 
-            children=[
-            dcc.Graph(figure=fig_density, style={'flex': '1'}),
-            dcc.Graph(figure=fig_hist, style={'flex': '1'}),
-        ]),
-        ### Linha 3: dispersão, barra
-        html.Div(style={
-            'display': 'flex',
-            'flex-direction': 'row',
-            'gap' : '25px',
-            'width': '100%',
-            }, 
-            children=[
-            dcc.Graph(figure=fig_scatter, style={'flex': '1'}),
-            dcc.Graph(figure=fig_bar, style={'flex': '1'}),
-        ]),
-        html.Div(style={
-            'width': '100%',
-        },
-        ### Linha 4: Regressão
-        children=dcc.Graph(figure=fig_regression)
-        )
-    ])
+    app.layout = html.Div(
+        style={"width": "100%", "padding": "20px"},
+        children=[
+            # Linha 1: heatmap, pizza
+            html.Div(
+                style={
+                    "display": "flex",
+                    "flex-direction": "row",
+                    "gap": "25px",
+                    "width": "100%",
+                },
+                children=[
+                    dcc.Graph(figure=fig_heatmap, style={"flex": "1"}),
+                    dcc.Graph(figure=fig_pizza, style={"flex": "1"}),
+                ],
+            ),
+            # Linha 2: densidade, histograma
+            html.Div(
+                style={
+                    "display": "flex",
+                    "flex-direction": "row",
+                    "gap": "25px",
+                    "width": "100%",
+                },
+                children=[
+                    dcc.Graph(figure=fig_density, style={"flex": "1"}),
+                    dcc.Graph(figure=fig_hist, style={"flex": "1"}),
+                ],
+            ),
+            # Linha 3: dispersão, barra
+            html.Div(
+                style={
+                    "display": "flex",
+                    "flex-direction": "row",
+                    "gap": "25px",
+                    "width": "100%",
+                },
+                children=[
+                    dcc.Graph(figure=fig_scatter, style={"flex": "1"}),
+                    dcc.Graph(figure=fig_bar, style={"flex": "1"}),
+                ],
+            ),
+            # Linha 4: regressão
+            html.Div(
+                style={
+                    "width": "100%",
+                },
+                children=dcc.Graph(figure=fig_regression),
+            ),
+        ],
+    )
 
     return app
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app = cria_app(df)
     app.run(debug=True, port=8050)
