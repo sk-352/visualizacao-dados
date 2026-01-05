@@ -143,7 +143,6 @@ def plot_regression(df_rm_outliers):
 def cria_app(df):
     # Cria app
     app = Dash(__name__)
-    server = app.server
 
     fig_heatmap = plot_heatmap(df)
     fig_pizza = plot_pizza(maiores)
@@ -212,6 +211,7 @@ def cria_app(df):
 
     return app
 
+server = app.server
 
 if __name__ == "__main__":
     app = cria_app(df)
