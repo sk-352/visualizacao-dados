@@ -212,7 +212,6 @@ def cria_app(df):
     return app
 
 
-if __name__ == "__main__":
-    app = cria_app(df)
+app = cria_app(df)
 
 server = app.server
